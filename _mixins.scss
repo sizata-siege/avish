@@ -1,0 +1,50 @@
+@mixin gradient ($from, $to, $angle: 60) 
+{
+	background: linear-gradient(60deg, $from, $to);
+}
+
+@mixin flex ($justify: space-evenly, $dir: column, $align: center, $wrap: unset) 
+{
+	display: flex;
+	justify-content: $justify;
+	flex-direction: $dir;
+	align-items: $align;
+	flex-wrap: $wrap;
+}
+
+@mixin width ($min: 320px, $width: 90vw, $max: 500px) 
+{
+	min-width: $min;
+	width: $width;
+	max-width: $max;
+}
+
+@mixin break {
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+@mixin textShadow ($opacity: .3) 
+{
+	text-shadow: 0 0 3px rgba(0, 0, 0, $opacity);
+}
+
+@mixin media ($width, $prop, $value) {
+	@media only screen and (max-width: #{$width}px) {
+            #{$prop}: $value;
+	}
+}
+
+@mixin bgImg ($size: cover, $pos: center, $rep: no-repeat, $att: unset) {
+    background-size: $size;
+    background-position: $pos;
+    background-repeat: $rep;
+    background-attachment: $att;
+}
+
+// quick media for single property
+@mixin media ($width, $prop, $value) {
+	@media only screen and (max-width: #{$width}px) {
+            #{$prop}: $value;
+	}
+}

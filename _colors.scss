@@ -1,0 +1,15 @@
+
+// ======================= Google Material Design ======================= //
+@use "material-colors" as *;
+
+.bg-white {
+	background-color: white;
+}
+
+.bg-black {
+	background-color: black;
+}
+
+@function mColor($color-name, $color-variant: '500') {
+	@return material-color($color-name, $color-variant);
+}

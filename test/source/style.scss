@@ -1,0 +1,16 @@
+$contentWidth: 900px;
+$primary: purple;
+
+// @use '../../index' with (
+//     $pppr: pink,
+// );
+
+// body {
+//     color: index.$pppr;
+// }
+
+@import '../../loader';
+
+body {
+    color: pink;
+}

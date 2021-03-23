@@ -1,0 +1,9 @@
+@function gray ($lvl) {
+  @return unquote("##{$lvl}#{$lvl}#{$lvl}");
+}
+
+@function rem ($unit) {
+  @return $unit * .25rem;
+}
+
+

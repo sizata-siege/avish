@@ -1,0 +1,99 @@
+// TODO: Check this font names out
+// @font-face {
+// 	font-family: "Eras* Light";
+// 	font-style: normal;
+// 	font-weight: normal;
+// 	src: local("Eras* Light"),
+// 		url("eras-light-5871822a2e706.woff") format("woff");
+// }
+
+// @font-face {
+// 	font-family: "Eras* Bold";
+// 	font-style: normal;
+// 	font-weight: normal;
+// 	src: local("Eras* Bold"),
+// 		url("eras-bold-5871825645ec8.woff") format("woff");
+// }
+
+// @font-face {
+// 	font-family: "Eras* Book";
+// 	font-style: normal;
+// 	font-weight: normal;
+// 	src: local("Eras* Book"),
+// 		url("eras-book-587181c4d21d4.woff") format("woff");
+// }
+
+// @font-face {
+// 	font-family: "Eras* Demi";
+// 	font-style: normal;
+// 	font-weight: normal;
+// 	src: local("Eras* Demi"),
+// 		url("eras-demi-587182767b329.woff") format("woff");
+// }
+
+// @font-face {
+// 	font-family: "Eras* Bold";
+// 	font-style: normal;
+// 	font-weight: normal;
+// 	src: local("Eras* Bold"),
+// 		url("eras-bold-5871820c913a2.woff") format("woff");
+// }
+
+// TODO: Until here
+// TODO: Change all Addresses to https://devlib.ir/font/...
+// TODO: Using google fonts is better I think
+// @font-face {
+// 	font-family: DancingScript;
+// 	src: url("../font/DancingScript.otf") format("otf");
+// }
+
+// @font-face {
+// 	font-family: Brandon;
+// 	src: url("../font/brandon.otf") format("otf");
+// }
+
+// @font-face {
+// 	font-family: Nunito;
+// 	src: url("../font/Nunito-Regular.ttf") format("truetype"),
+// 		url("../font/Nunito-Light.ttf") format("ttf");
+// }
+
+// @font-face {
+// 	font-family: QuickSand;
+// 	src: url("../font/Quicksand.ttf") format("ttf");
+// }
+
+// @font-face {
+// 	font-family: Eras demi;
+// 	font-weight: normal;
+// 	font-style: normal;
+// 	src: url("../font/eras-demi-587182767b329.woff")
+// 		format("woff");
+// }
+
+// @font-face {
+// 	font-family: Eras book;
+// 	font-weight: normal;
+// 	font-style: normal;
+// 	src: url("../font/eras-book-587181c4d21d4.woff")
+// 		format("woff");
+// }
+
+@font-face {
+	font-family: Vazir;
+	src: url("../font/Vazir.eot") format("embedded-opentype");
+	src: url("../font/Vazir.ttf") format("ttf"),
+		url("../font/Vazir.woff") format("woff"),
+		url("../font/Vazir-Light.eot") format("eot"),
+		url("../font/Vazir-Light.ttf") format("ttf"),
+		url("../font/Vazir-Light.woff") format("woff"),
+		url("../font/Vazir-FD-WOL.ttf") format("ttf");
+}
+
+@font-face {
+	font-family: Sahel;
+	src: url("../font/Sahel.ttf") format("ttf"),
+		url("../font/Sahel-FD.ttf") format("ttf");
+}
+
+@import "./material-icons/icons";

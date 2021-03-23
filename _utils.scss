@@ -1,0 +1,905 @@
+// Here we have some utilities for layouts like width ...
+
+@use 'mixins' as *;
+
+$contentWidth: 1280px !default;
+
+@function calcWidth($col) {
+	@return unquote((100 / 12 * $col) + "%");
+}
+
+// =============================== Width =============================== //
+@for $w from 1 to 11 {
+	.w#{$w} {
+		// width: calc(8.33% * #{$w});
+		width: calcWidth($w);
+	}
+}
+@for $w from 1 to 11 {
+	@for $ws from 1 to 12 {
+		.w#{$w}-#{$ws} {
+			width: calcWidth($w);
+			@media only screen and (max-width: 600px) {
+				width: calcWidth($ws);
+				// todo: find a better way to merge all
+				// todo: medias to gether
+			}
+		}
+	}
+}
+
+.w6 {
+	width: 50%;
+}
+.wfull {
+	width: 100%;
+}
+
+// ================================ Flex ================================ //
+.flex {
+	display: flex;
+}
+.flex-col {
+	@extend .flex;
+	flex-direction: column;
+}
+.flex-row {
+	@extend .flex;
+	flex-direction: row;
+}
+
+// ======================== Margins & Paddings ======================== //
+@for $value from 0 to 96 {
+	.m#{$value} {
+		margin: unquote((0.25 * $value) + "rem") !important;
+	}
+
+	.-m#{$value} {
+		margin: unquote((-0.25 * $value) + "rem") !important;
+	}
+
+	.my#{$value} {
+		margin-top: unquote((0.25 * $value) + "rem") !important;
+		margin-bottom: unquote((0.25 * $value) + "rem") !important;
+	}
+
+	.-my#{$value} {
+		margin-top: unquote((-0.25 * $value) + "rem") !important;
+		margin-bottom: unquote((-0.25 * $value) + "rem") !important;
+	}
+
+	.mx#{$value} {
+		margin-left: unquote((0.25 * $value) + "rem") !important;
+		margin-right: unquote((0.25 * $value) + "rem") !important;
+	}
+
+	.-mx#{$value} {
+		margin-left: unquote((-0.25 * $value) + "rem") !important;
+		margin-right: unquote((-0.25 * $value) + "rem") !important;
+	}
+
+	.mt#{$value} {
+		margin-top: unquote((0.25 * $value) + "rem") !important;
+	}
+
+	.-mt#{$value} {
+		margin-top: unquote((-0.25 * $value) + "rem") !important;
+	}
+
+	.mb#{$value} {
+		margin-bottom: unquote((0.25 * $value) + "rem") !important;
+	}
+
+	.-mb#{$value} {
+		margin-bottom: unquote((-0.25 * $value) + "rem") !important;
+	}
+
+	.ml#{$value} {
+		margin-left: unquote((0.25 * $value) + "rem") !important;
+	}
+
+	.-ml#{$value} {
+		margin-left: unquote((-0.25 * $value) + "rem") !important;
+	}
+
+	.mr#{$value} {
+		margin-right: unquote((0.25 * $value) + "rem") !important;
+	}
+
+	.-mr#{$value} {
+		margin-right: unquote((-0.25 * $value) + "rem") !important;
+	}
+
+	// Paddings
+	.p#{$value} {
+		padding: unquote((0.25 * $value) + "rem") !important;
+	}
+
+	.-m#{$value} {
+		padding: unquote((-0.25 * $value) + "rem") !important;
+	}
+
+	.py#{$value} {
+		padding-top: unquote((0.25 * $value) + "rem") !important;
+		padding-bottom: unquote((0.25 * $value) + "rem") !important;
+	}
+
+	.-py#{$value} {
+		padding-top: unquote((-0.25 * $value) + "rem") !important;
+		padding-bottom: unquote((-0.25 * $value) + "rem") !important;
+	}
+
+	.px#{$value} {
+		padding-left: unquote((0.25 * $value) + "rem") !important;
+		padding-right: unquote((0.25 * $value) + "rem") !important;
+	}
+
+	.-px#{$value} {
+		padding-left: unquote((-0.25 * $value) + "rem") !important;
+		padding-right: unquote((-0.25 * $value) + "rem") !important;
+	}
+
+	.pt#{$value} {
+		padding-top: unquote((0.25 * $value) + "rem") !important;
+	}
+
+	.-pt#{$value} {
+		padding-top: unquote((-0.25 * $value) + "rem") !important;
+	}
+
+	.pb#{$value} {
+		padding-bottom: unquote((0.25 * $value) + "rem") !important;
+	}
+
+	.-pb#{$value} {
+		padding-bottom: unquote((-0.25 * $value) + "rem") !important;
+	}
+
+	.pl#{$value} {
+		padding-left: unquote((0.25 * $value) + "rem") !important;
+	}
+
+	.-pl#{$value} {
+		padding-left: unquote((-0.25 * $value) + "rem") !important;
+	}
+
+	.pr#{$value} {
+		padding-right: unquote((0.25 * $value) + "rem") !important;
+	}
+
+	.-pr#{$value} {
+		padding-right: unquote((-0.25 * $value) + "rem") !important;
+	}
+}
+
+.mauto {
+	margin: auto;
+}
+
+.mxauto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.m-auto {
+	margin: auto;
+}
+
+.mx-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// How about copying from tailwindcss utilities
+
+// ============================ Responsive ============================ //
+.sm\:fuck {
+	// also for md, lg, xl, ...
+}
+
+// move through an array
+// sizes : [
+// sm: [
+// loop in the all property array
+// ]
+// md: [
+// loop in the all property array
+// ]
+// lg: [
+// loop in the all property array
+// ]
+// xl: [
+// loop in the all property array
+// ]
+// ]
+//
+// allProps [...]
+//
+
+// ============================= direction ============================= //
+.rtl {
+	direction: rtl;
+}
+.ltr {
+	direction: ltr;
+}
+.dir-rtl {
+	direction: rtl;
+}
+.dir-ltr {
+	direction: ltr;
+}
+
+// ======================== Content & container ======================== //
+// section .content,
+// nav .content,
+// header .content,
+// footer .content,
+// section .container,
+// nav .container,
+// header .container,
+// footer .container {
+// 	// max-width: $contentWidth;
+// 	@include width(300px, 90vw, $contentWidth);
+// 	margin-left: auto;
+// 	margin-right: auto;
+// }
+.container,
+.content {
+	@include width(300px, 90vw, $contentWidth);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// rings
+
+// borders (colors, sizes) loop through colors
+
+// shadows
+
+// ========================== Positions & etc. ========================== //
+.inline {
+	display: inline;
+}
+
+.block {
+	display: block;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.text-bold {
+	font-weight: 900;
+}
+
+.text-lg {
+	font-size: 24px;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.flex-row-reverse {
+	flex-direction: row-reverse;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.flex-col-reverse {
+	flex-direction: column-reverse;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+	flex-wrap: wrap-reverse;
+}
+
+.flex-nowrap {
+	flex-wrap: nowrap;
+}
+
+.place-items-auto {
+	place-items: auto;
+}
+
+.place-items-start {
+	place-items: start;
+}
+
+.place-items-end {
+	place-items: end;
+}
+
+.place-items-center {
+	place-items: center;
+}
+
+.place-items-stretch {
+	place-items: stretch;
+}
+
+.place-content-center {
+	place-content: center;
+}
+
+.place-content-start {
+	place-content: start;
+}
+
+.place-content-end {
+	place-content: end;
+}
+
+.place-content-between {
+	place-content: space-between;
+}
+
+.place-content-around {
+	place-content: space-around;
+}
+
+.place-content-evenly {
+	place-content: space-evenly;
+}
+
+.place-content-stretch {
+	place-content: stretch;
+}
+
+.place-self-auto {
+	place-self: auto;
+}
+
+.place-self-start {
+	place-self: start;
+}
+
+.place-self-end {
+	place-self: end;
+}
+
+.place-self-center {
+	place-self: center;
+}
+
+.place-self-stretch {
+	place-self: stretch;
+}
+
+.items-start {
+	align-items: flex-start;
+}
+
+.items-end {
+	align-items: flex-end;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.items-baseline {
+	align-items: baseline;
+}
+
+.items-stretch {
+	align-items: stretch;
+}
+
+.content-center {
+	align-content: center;
+}
+
+.content-start {
+	align-content: flex-start;
+}
+
+.content-end {
+	align-content: flex-end;
+}
+
+.content-between {
+	align-content: space-between;
+}
+
+.content-around {
+	align-content: space-around;
+}
+
+.content-evenly {
+	align-content: space-evenly;
+}
+
+.self-auto {
+	align-self: auto;
+}
+
+.self-start {
+	align-self: flex-start;
+}
+
+.self-end {
+	align-self: flex-end;
+}
+
+.self-center {
+	align-self: center;
+}
+
+.self-stretch {
+	align-self: stretch;
+}
+
+.justify-items-auto {
+	justify-items: auto;
+}
+
+.justify-items-start {
+	justify-items: start;
+}
+
+.justify-items-end {
+	justify-items: end;
+}
+
+.justify-items-center {
+	justify-items: center;
+}
+
+.justify-items-stretch {
+	justify-items: stretch;
+}
+
+.justify-start {
+	justify-content: flex-start;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-around {
+	justify-content: space-around;
+}
+
+.justify-evenly {
+	justify-content: space-evenly;
+}
+
+.justify-self-auto {
+	justify-self: auto;
+}
+
+.justify-self-start {
+	justify-self: start;
+}
+
+.justify-self-end {
+	justify-self: end;
+}
+
+.justify-self-center {
+	justify-self: center;
+}
+
+.justify-self-stretch {
+	justify-self: stretch;
+}
+
+.flex-1 {
+	flex: 1 1 0%;
+}
+
+.flex-auto {
+	flex: 1 1 auto;
+}
+
+.flex-initial {
+	flex: 0 1 auto;
+}
+
+.flex-none {
+	flex: none;
+}
+
+.flex-grow-0 {
+	flex-grow: 0;
+}
+
+.flex-grow {
+	flex-grow: 1;
+}
+
+.flex-shrink-0 {
+	flex-shrink: 0;
+}
+
+.flex-shrink {
+	flex-shrink: 1;
+}
+
+.order-1 {
+	order: 1;
+}
+
+.order-2 {
+	order: 2;
+}
+
+.order-3 {
+	order: 3;
+}
+
+.order-4 {
+	order: 4;
+}
+
+.order-5 {
+	order: 5;
+}
+
+.order-6 {
+	order: 6;
+}
+
+.order-7 {
+	order: 7;
+}
+
+.order-8 {
+	order: 8;
+}
+
+.order-9 {
+	order: 9;
+}
+
+.order-10 {
+	order: 10;
+}
+
+.order-11 {
+	order: 11;
+}
+
+.order-12 {
+	order: 12;
+}
+
+.order-first {
+	order: -9999;
+}
+
+.order-last {
+	order: 9999;
+}
+
+.order-none {
+	order: 0;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-none {
+	float: none;
+}
+
+.rounded-sm {
+	border-radius: 0.125rem;
+}
+
+.rounded {
+	border-radius: 0.25rem;
+}
+
+.rounded-md {
+	border-radius: 0.375rem;
+}
+
+.rounded-lg {
+	border-radius: 0.5rem;
+}
+
+.rounded-xl {
+	border-radius: 0.75rem;
+}
+
+.rounded-2xl {
+	border-radius: 1rem;
+}
+
+.rounded-3xl {
+	border-radius: 1.5rem;
+}
+
+.rounded-full {
+	border-radius: 9999px;
+}
+
+.text-xs {
+	font-size: 0.75rem;
+}
+
+.text-sm {
+	font-size: 0.875rem;
+}
+
+.text-base {
+	font-size: 1rem;
+}
+
+.text-lg {
+	font-size: 1.125rem;
+}
+
+.text-xl {
+	font-size: 1.25rem;
+}
+
+.text-2xl {
+	font-size: 1.5rem;
+}
+
+.text-3xl {
+	font-size: 1.875rem;
+}
+
+.text-4xl {
+	font-size: 2.25rem;
+}
+
+.text-5xl {
+	font-size: 3rem;
+}
+
+.text-6xl {
+	font-size: 3.75rem;
+}
+
+.text-7xl {
+	font-size: 4.5rem;
+}
+
+.text-8xl {
+	font-size: 6rem;
+}
+
+.text-9xl {
+	font-size: 8rem;
+}
+
+// =============================== Border =============================== //
+@for $w from 1 to 15 {
+	.br#{$w} {
+		// width: calc(8.33% * #{$w});
+		border-width: #{$w}px; // !important;
+	}
+}
+
+// =============================== Shadow =============================== //
+.shadow-sm {
+	--tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+		var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow {
+	--tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+		0 1px 2px 0 rgba(0, 0, 0, 0.06);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+		var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-md {
+	--tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+		var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-lg {
+	--tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+		0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+		var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-xl {
+	--tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+		0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+		var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-2xl {
+	--tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+		var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+// ============================== ToolTips ============================= //
+.tooltip {
+	position: relative;
+	display: inline-block;
+	// border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+
+	&:hover .tooltiptext {
+		visibility: visible;
+		opacity: 1;
+		animation: fadeOut 2s linear 3s;
+	}
+
+	&.active {
+		.tooltiptext {
+			// opacity: 1;
+			visibility: visible;
+			animation: fadeOut 2s linear .5s ;
+			// transition: 2s 5s;
+		}
+	}
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	opacity: 0;
+	// min-width: 120px;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 5px;
+	border-radius: .5rem;
+	position: absolute;
+	z-index: 20;
+	bottom: calc(100% + 10px);
+	left: 50%;
+	// margin-left: -50%;
+	transform: translateX(-50%);
+	transition: .5s;
+	font-size: 14px;
+	font-weight: normal;
+
+	&::after {
+		content: " ";
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		margin-left: -5px;
+		border-width: 5px;
+		border-style: solid;
+		border-color: black transparent transparent transparent;
+	}
+
+	&.tooltip-bottom {
+		top: calc(100% + 10px);
+		bottom: unset;
+
+		&::after {
+			bottom: 100%;
+			top: unset;
+			transform: rotate(180deg);
+		}
+	}
+
+	&.tooltip-sm {
+		width: 75px;
+	}
+
+	//
+}
+
+
+// =============================== Dialogs =============================== //
+.hasDlg {
+
+	.dlg {
+		@include flex;
+		display: none;
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(#000, .4);
+		transition: .3s;
+		animation: fadeIn .3s linear;
+	}
+}
+
+.dlg-container {
+	@include flex;
+	display: none;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 90;
+	background-color: rgba(#000, .4);
+	transition: .3s;
+	animation: fadeIn .3s linear;
+
+	.dlg {
+		background-color: #fff;
+		border-radius: .5rem;
+		box-shadow: 0 0 4px 0 rgba(#000, .4);
+		padding: 20px;
+		@include width(300px, 90vw, 400px);
+	}
+}
+
+
+// =============================== Cards =============================== //
+.card {
+	// box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+	@extend .shadow-md;
+	@extend .rounded-lg;
+	@extend .mx-auto;
+	background-color: white;
+}
+
+.card-sm {
+	@include width(300px, 90vw, 400px);
+	padding: rem(3) rem(6);
+}
+
+.card-md {
+	@include width(300px, 90vw, 500px);
+	padding: rem(3) rem(7);
+}
+
+.card-lg {
+	@include width(300px, 90vw, 600px);
+	padding: rem(4) rem(8);
+}
+
+.card-xl {
+	@include width(300px, 90vw, 800px);
+	padding: rem(4) rem(9);
+}
+
+.out {
+	position: fixed;
+	top: -9999px;
+	left: -9999px;
+}

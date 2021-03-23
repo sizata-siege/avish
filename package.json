@@ -1,0 +1,22 @@
+{
+  "name": "@sizata/avish",
+  "version": "0.0.1",
+  "description": "A nice sass library",
+  "main": "_index.scss",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sizata-siege/avish.git"
+  },
+  "author": "Amirhossein Shakeri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sizata-siege/avish/issues"
+  },
+  "homepage": "https://github.com/sizata-siege/avish#readme"
+}
