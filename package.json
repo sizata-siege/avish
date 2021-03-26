@@ -1,13 +1,14 @@
 {
   "name": "@sizata/avish",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A nice sass library",
   "main": "_index.scss",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "sass --watch test/source/style.scss test/output/style.css",
+    "start": "npm test"
   },
   "repository": {
     "type": "git",

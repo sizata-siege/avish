@@ -9,8 +9,10 @@ $primary: purple;
 //     color: index.$pppr;
 // }
 
-@import '../../loader';
+// @import '../../loader';
+
+@use '../../index';
 
 body {
-    color: pink;
+    background-color: pink;
 }
