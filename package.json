@@ -1,6 +1,6 @@
 {
   "name": "@sizata/avish",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A nice sass library",
   "main": "_index.scss",
   "directories": {

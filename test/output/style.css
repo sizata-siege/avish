@@ -17470,7 +17470,7 @@ button,
   border: unset;
   color: white;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-  padding: rem(3) 0;
+  padding: 0.75rem 0;
 }
 
 input, button, .btn {
@@ -17481,13 +17481,13 @@ input, button, .btn {
   width: 100%;
 }
 .btn-lg {
-  padding: rem(4) rem(6);
+  padding: 1rem 1.5rem;
 }
 .btn-md {
-  padding: rem(3) rem(5);
+  padding: 0.75rem 1.25rem;
 }
 .btn-sm {
-  padding: rem(2) rem(4);
+  padding: 0.5rem 1rem;
   font-size: 14px;
 }
 
@@ -17655,11 +17655,11 @@ select {
 }
 
 form .row {
-  margin: rem(4) 0;
+  margin: 1rem 0;
 }
 form .row input,
 form .row textarea {
-  margin: rem(3) 0;
+  margin: 0.75rem 0;
 }
 form .row .error {
   font-size: 0.875rem;
